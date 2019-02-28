@@ -1,0 +1,386 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>8. 독스트링 &mdash; 주피터와 스핑크스를 이용한 문서화 방법 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="색인"
+              href="genindex.html"/>
+        <link rel="search" title="검색" href="search.html"/>
+    <link rel="top" title="주피터와 스핑크스를 이용한 문서화 방법 1.0 documentation" href="index.html"/>
+        <link rel="next" title="9. 레이텍 템플릿과 스타일" href="latex_template.html"/>
+        <link rel="prev" title="7. 주피터에서 스핑크스 문법으로 작성하기" href="reST_in_notebook.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> 주피터와 스핑크스를 이용한 문서화 방법
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+  
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">1. 소개</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">2. 소프트웨어 설치</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyscripts.html">3. 문서 생성을 위한 파이썬 스크립트</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">4. 문서화 설정</a></li>
+<li class="toctree-l1"><a class="reference internal" href="syntax_reST.html">5. 스핑크스 문법</a></li>
+<li class="toctree-l1"><a class="reference internal" href="syntax_notebook.html">6. 주피터 문법</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reST_in_notebook.html">7. 주피터에서 스핑크스 문법으로 작성하기</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">8. 독스트링</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">8.1. 제목</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">8.2. 함수</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">8.3. 수식</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="latex_template.html">9. 레이텍 템플릿과 스타일</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nb2pdf.html">10. 주피터 노트북을 PDF로 만들기</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bibliography.html">11. 참고 문헌</a></li>
+</ul>
+
+            
+          
+  <a href="genindex.html">색인</a>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">주피터와 스핑크스를 이용한 문서화 방법</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">처음</a> &raquo;</li>
+        
+      <li>8. 독스트링</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/docstring.rst.txt" rel="nofollow"> 페이지 소스</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast,
+.nboutput.nblast {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast + .nbinput {
+    margin-top: -19px;
+}
+
+/* nice headers on first paragraph of info/warning boxes */
+.admonition .first {
+    margin: -12px;
+    padding: 6px 12px;
+    margin-bottom: 12px;
+    color: #fff;
+    line-height: 1;
+    display: block;
+}
+.admonition.warning .first {
+    background: #f0b37e;
+}
+.admonition.note .first {
+    background: #6ab0de;
+}
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+</style>
+<div class="section" id="id1">
+<h1>8. 독스트링<a class="headerlink" href="#id1" title="제목 주소">¶</a></h1>
+<p>파이썬 소스에서 사용할 수 있는 세 가지 형식의 독스트링(docstring)이 있다.</p>
+<ul class="simple">
+<li>스핑크스 (reST)</li>
+<li>구글</li>
+<li>NumPyDoc</li>
+</ul>
+<p>이 중에서 NumPyDoc 형식을 사용해야 한다.
+스핑크스 형식 또한 사용할 수 있지만 명시적 마크업(directive)의 사용은 제한될 수 있다.</p>
+<p>또한 다음 사항들을 유념해야 한다.</p>
+<ul>
+<li><p class="first">일반 주석의 용도로 <span class="target" id="index-0"></span>독스트링 (<span class="target" id="index-1"></span>DocString)을 쓰지 않아야 한다. 그 두 가지 마크업들을 뒤섞어 쓰는 것도 피해야 한다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>```
+# blah blah
+# blah blah
+```
+</pre></div>
+</div>
+</li>
+<li><p class="first">독스트링 안에 HTML 태그를 쓰지 않아야 한다.</p>
+</li>
+<li><p class="first">불필요한 들여쓰기와 줄바꿈을 삼가야 한다.</p>
+</li>
+<li><p class="first">NumpyDoc 형식의 텍스트에서는 파이썬의 들여쓰기 규칙을 따라야 한다. (4 자)</p>
+</li>
+</ul>
+<div class="section" id="id2">
+<h2>8.1. 제목<a class="headerlink" href="#id2" title="제목 주소">¶</a></h2>
+<p>파이썬 모듈과 클래스에 대한 제목이 스핑크스에 의해 자동으로 만들어지므로 독스트링에서 제목 마크업을 사용하는 것은 불필요하다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># module_name.py</span>
+<span class="c1"># -*- coding: UTF-8 -*-</span>
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">`module_name` provides:</span>
+
+<span class="sd">1. blah</span>
+<span class="sd">#. blah</span>
+<span class="sd">#. blah</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>8.2. 함수<a class="headerlink" href="#id3" title="제목 주소">¶</a></h2>
+<p>함수에 대한 설명은 패러미터, 결과, 예제 등을 포함한다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Parameters
+----------
+introductory sentences if needed.
+x : type
+␣␣␣␣description
+
+␣␣␣␣description
+y : type
+␣␣␣␣description
+
+␣␣␣␣* item
+␣␣␣␣* item
+</pre></div>
+</div>
+<p>여기에서 <code class="docutils literal notranslate"><span class="pre">Parameters</span></code>는 (제목이 아니라) 매개변수에 대한 설명을 위한 마크업으로서 기능한다.
+<code class="docutils literal notranslate"><span class="pre">Attributes</span></code>, <code class="docutils literal notranslate"><span class="pre">Returns</span></code>, <code class="docutils literal notranslate"><span class="pre">Yields</span></code>, <code class="docutils literal notranslate"><span class="pre">Examples</span></code>, <code class="docutils literal notranslate"><span class="pre">Notes</span></code>, <code class="docutils literal notranslate"><span class="pre">See</span> <span class="pre">Also</span></code>가 같은 성격의 마크업이다.</p>
+<p>정의 목록이 Parameters 마크업을 뒤따른다. 그 형식은 reST와 다소 다르다.</p>
+<ul class="simple">
+<li>매개변수 항목과 콜론 사이에 공백을 두어야 한다.</li>
+<li>콜론 다음에 변수 유형을 명시한다.</li>
+<li>그 다음 줄에 4 자만큼 들여쓰고 상세를 추가한다.</li>
+<li>빈 줄이 없는 줄나눔은 무시된다.</li>
+<li>정의 목록의 중첩은 가능하지 않다. 어떤 항목에서 하위 목록의 사용이 필요하다면 비순서 목록 또는 순서 목록의 형식을 사용해야 한다.</li>
+</ul>
+<p>예제에서 코드를 포함하는 모든 줄은 <code class="docutils literal notranslate"><span class="pre">&gt;&gt;&gt;</span></code> 또는 <code class="docutils literal notranslate"><span class="pre">...</span></code>로 시작해야 한다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Examples</span>
+<span class="o">--------</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">pyFlutter</span> <span class="k">as</span> <span class="nn">pf</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id4">
+<h2>8.3. 수식<a class="headerlink" href="#id4" title="제목 주소">¶</a></h2>
+<p>reST 문서에서와는 다르게, 파이썬 이스케이프 코드와 동일한 문자로 시작하는 수식 명령에 이스케이프 문자를 추가해야 한다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">.. math::</span>
+<span class="sd">␣␣␣␣f_a=f_m\left(\\frac{V_a}{V_m}\\right)\left(\\frac{L_m}{L_a}\\right) \\\\</span>
+<span class="sd">␣␣␣␣x_{k+1}  &amp; = A x_k + K e_k \\\\</span>
+<span class="sd">␣␣␣␣y_k      &amp; = C x_k + e_k</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+<p>다른 방법은 날 문자열 (raw string)로 만드는 것이다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="sa">r</span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">.. math::</span>
+
+<span class="sd">  f_a=f_m\left(\frac{V_a}{V_m}\right)\left(\frac{L_m}{L_a}\right)</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="latex_template.html" class="btn btn-neutral float-right" title="9. 레이텍 템플릿과 스타일" accesskey="n" rel="next">다음 <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="reST_in_notebook.html" class="btn btn-neutral" title="7. 주피터에서 스핑크스 문법으로 작성하기" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 이전</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+      <script type="text/javascript" src="_static/MathJaxPath.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

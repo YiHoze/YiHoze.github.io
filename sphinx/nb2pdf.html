@@ -1,0 +1,360 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>10. 주피터 노트북을 PDF로 만들기 &mdash; 주피터와 스핑크스를 이용한 문서화 방법 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="색인"
+              href="genindex.html"/>
+        <link rel="search" title="검색" href="search.html"/>
+    <link rel="top" title="주피터와 스핑크스를 이용한 문서화 방법 1.0 documentation" href="index.html"/>
+        <link rel="next" title="11. 참고 문헌" href="bibliography.html"/>
+        <link rel="prev" title="9. 레이텍 템플릿과 스타일" href="latex_template.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> 주피터와 스핑크스를 이용한 문서화 방법
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+  
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">1. 소개</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">2. 소프트웨어 설치</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyscripts.html">3. 문서 생성을 위한 파이썬 스크립트</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">4. 문서화 설정</a></li>
+<li class="toctree-l1"><a class="reference internal" href="syntax_reST.html">5. 스핑크스 문법</a></li>
+<li class="toctree-l1"><a class="reference internal" href="syntax_notebook.html">6. 주피터 문법</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reST_in_notebook.html">7. 주피터에서 스핑크스 문법으로 작성하기</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docstring.html">8. 독스트링</a></li>
+<li class="toctree-l1"><a class="reference internal" href="latex_template.html">9. 레이텍 템플릿과 스타일</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">10. 주피터 노트북을 PDF로 만들기</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#한글">10.1. 한글</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#변환-프로그램과-템플릿">10.2. 변환 프로그램과 템플릿</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#문서의-제목과-저자-정보">10.2.1. 문서의 제목과 저자 정보</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#그림">10.2.2. 그림</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="bibliography.html">11. 참고 문헌</a></li>
+</ul>
+
+            
+          
+  <a href="genindex.html">색인</a>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">주피터와 스핑크스를 이용한 문서화 방법</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">처음</a> &raquo;</li>
+        
+      <li>10. 주피터 노트북을 PDF로 만들기</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/nb2pdf.ipynb.txt" rel="nofollow"> 페이지 소스</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast,
+.nboutput.nblast {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast + .nbinput {
+    margin-top: -19px;
+}
+
+/* nice headers on first paragraph of info/warning boxes */
+.admonition .first {
+    margin: -12px;
+    padding: 6px 12px;
+    margin-bottom: 12px;
+    color: #fff;
+    line-height: 1;
+    display: block;
+}
+.admonition.warning .first {
+    background: #f0b37e;
+}
+.admonition.note .first {
+    background: #6ab0de;
+}
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+</style>
+<div class="section" id="주피터-노트북을-PDF로-만들기">
+<h1>10. 주피터 노트북을 PDF로 만들기<a class="headerlink" href="#주피터-노트북을-PDF로-만들기" title="제목 주소">¶</a></h1>
+<p>주피터는 노트북을 다른 여러 포맷으로 내보낼 수 있다. HTML로 내보내려면
+<strong>File</strong> &gt; <strong>Download as</strong> 메뉴를 클릭하고 <strong>HTML</strong>을 선택한다. 실제로
+파일 변환을 처리하는 프로그램은 nbconvert이다. 같은 방법으로 PDF를 얻을
+수 있지만, 한글 텍스트가 나타나지 않는다.</p>
+<div class="admonition note">
+<p class="first admonition-title">참고</p>
+<p class="last">마크다운이 아닌, reST 같은 언어로 작성된 내용은 변환에서 제외된다는 점을 유념하라. 그래서 nbconvert에 의해 생성된 PDF에는 이 주의문이 없을 것이다.</p>
+</div>
+<div class="section" id="한글">
+<h2>10.1. 한글<a class="headerlink" href="#한글" title="제목 주소">¶</a></h2>
+<p>한글 텍스트가 포함된 PDF를 얻으려면 주피터의 레이텍 템플릿 파일을
+조작해야 한다. 다음과 같은 nbconvert 패키지의 템플릿
+디렉토리(/Lib/site-packages/nbconvert/templates/latex)에서 base.tplx
+파일을 연다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">site</span><span class="o">-</span><span class="n">packages</span>\<span class="n">nbconvert</span>\<span class="n">templates</span>\<span class="n">latex</span>\<span class="n">base</span><span class="o">.</span><span class="n">tplx</span>
+</pre></div>
+</div>
+<p>그리고 16 행에 다음과 같이 추가한다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mi">16</span><span class="p">:</span> \<span class="n">usepackage</span><span class="p">{</span><span class="n">kotex</span><span class="p">}</span>
+<span class="mi">17</span><span class="p">:</span> \<span class="n">usepackage</span><span class="p">[</span><span class="n">T1</span><span class="p">]{</span><span class="n">fontenc</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="변환-프로그램과-템플릿">
+<h2>10.2. 변환 프로그램과 템플릿<a class="headerlink" href="#변환-프로그램과-템플릿" title="제목 주소">¶</a></h2>
+<p>base.tplx를 수정하지 않고 한글 문서를 만들기 위해 그리고 손쉬운 파일
+변환과 스타일 변경을 위해 다음과 같은 것들이 고안되었다.</p>
+<ul class="simple">
+<li><strong>nb2pdf.exe</strong>: nbconvert를 이용하여 주피터 노트북을 레이텍으로
+변환하고, xelatex을 이용하여 PDF를 만든다. 이 프로그램은 이전 판의
+nb2pdf.ps1을 대체한다.</li>
+<li><strong>kari.tplx</strong>: nb2pdf.exe가 노트북 파일을 레이텍으로 변환할 때 이
+템플릿이 사용된다.</li>
+<li><strong>karijupyter.sty</strong>: 생성된 레이텍 파일이 이 레이텍 스타일을
+사용한다.</li>
+</ul>
+<p>사용 방법은 다음과 같다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#&gt;nb2pdf.exe foo.ipynb</span>
+</pre></div>
+</div>
+<p>‘-e’ 옵션을 주면, 생성된 텍 파일에서 문자열들을 다른 것으로 교체하도록
+strrep.exe가 호출된다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1">#&gt;nb2pdf.exe foo.ipynb -e</span>
+</pre></div>
+</div>
+<p>strrep.exe 프로그램에 대해 <a class="reference internal" href="pyscripts.html"><span class="doc">문서 생성을 위한 파이썬
+스크립트</span></a>를 보라.</p>
+<div class="section" id="문서의-제목과-저자-정보">
+<h3>10.2.1. 문서의 제목과 저자 정보<a class="headerlink" href="#문서의-제목과-저자-정보" title="제목 주소">¶</a></h3>
+<p>노트북의 메타데이터를 이용하여 문서의 제목과 저자를 추가할 수 있다.
+<strong>Edit</strong> &gt; <strong>Edit Notebook Metadata</strong> 메뉴를 클릭하고, 나타난 창에서
+다음과 같이 추가하라.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="s2">&quot;latex&quot;</span><span class="p">:</span> <span class="p">{</span>
+  <span class="s2">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;How to Convert a Single Jupyter Notebook to PDF&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;author&quot;</span><span class="p">:</span> <span class="s2">&quot;KARI&quot;</span><span class="p">,</span>
+  <span class="s2">&quot;language&quot;</span><span class="p">:</span> <span class="s2">&quot;english&quot;</span>
+<span class="p">},</span>
+</pre></div>
+</div>
+<p>‘language’ 옵션의 설정이 생성되는 텍 파일에 전달된다. 아무 언어도
+설정되지 않으면 한국어 문서로 간주된다.</p>
+</div>
+<div class="section" id="그림">
+<h3>10.2.2. 그림<a class="headerlink" href="#그림" title="제목 주소">¶</a></h3>
+<p>karijupyter.sty는 <code class="docutils literal notranslate"><span class="pre">\includegraphics</span></code> 명령을 재정의하여 판면 폭보다 큰
+이미지를 판면에 맞게 축소한다.</p>
+<p><img alt="image0" src="_images/jupiter.jpg" /></p>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="bibliography.html" class="btn btn-neutral float-right" title="11. 참고 문헌" accesskey="n" rel="next">다음 <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="latex_template.html" class="btn btn-neutral" title="9. 레이텍 템플릿과 스타일" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 이전</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+      <script type="text/javascript" src="_static/MathJaxPath.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

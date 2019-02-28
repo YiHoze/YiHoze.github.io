@@ -1,0 +1,162 @@
+***********************
+레이텍 템플릿과 스타일
+***********************
+
+레이텍 템플릿
+=============
+
+docs/_templates 디렉토리에 있는 :index:`latex.tex_t`\ 가 레이텍 생성을 위한 템플릿 파일이다. 이 템플릿은 레이텍 클래스로서 :index:`hzguide.cls`\ 를 사용한다.
+
+::
+
+  \documentclass[
+    <%= fontsize if fontsize is defined else '10pt' %>, 
+    language=<%= language if language is defined else 'korean' %>, 
+    <%= chapteropen if chapteropen is defined else 'openright' %>, 
+    pairquote=false]{hzguide}
+  \usepackage{karisphinx}
+  <%= preamble %>
+  
+
+이 템플릿 파일을 조작하여 특정 내용을 추가하거나 제외할 수 있다.
+
+레이텍 스타일
+=============
+
+:index:`karisphinx.sty`\ 는 sphinx.sty를 비롯한 스핑크스가 제공하는 여러 스타일 패키지들을 기반으로 만들어졌다. 그 스타일 파일로부터 많은 매크로들이 karisphinx 패키지로 옮겨졌고, 그 중 여러 매크로들이 재정의되었다.
+
+이 패키지에 정의된 스타일들 중 일부를 변경하는 가장 손쉬운 방법은 conf.py 파일에서 :index:`latex_elements` 옵션을 이용하는 것이다. 예를 들어, B5 크기에 변이단(變二段])으로 조판하려면 다음과 같이 명시한다.
+
+::
+
+  latex_elements = { 'preamble': '\\AdhocSetup{layout} \\LayoutSetup{paper=B5,column=vartwo}'}
+
+영어 문서를 작성하려면 다음과 같이 명시한다.
+
+::
+
+  latex_elements = { 'language': 'korean'}
+
+폰트 크기를 지정하려면 다음과 같이 명시한다.
+
+::
+
+  latex_elements = { 'fontsize': '11pt'}
+
+아무 것도 지정하지 않으면 10 포인트로 설정된다. 사용 가능한 옵션은 9pt, 10pt, 11pt, 12pt, 그리고 14pt이다. 14 포인트보다 더 큰 옵션도 사용 가능하지만 일반 문서에서 사용할 필요가 없을 것이다.
+더 자세한 사항은 memoir 클래스 설명서 46 쪽을 보라. :index:`texdoc` 명령을 이용하여 설명서 파일을 열 수 있다.
+
+::
+
+  #>texdoc memoir
+
+표지에 표시할 정보를 비롯하여 추가해야 할 것들을 :index:`colophon.tex` 파일에 작성하라.
+karisphinx.sty는 colophon.tex을 불러들여 문서 앞에 추가한다.
+colophon.tex 파일이 없으면 문서 제목이 기본 형식으로 표시된다.
+
+또한 colophon.tex을 스타일 설정을 바꾸거나 추가하는 데에 사용할 수 있다. 장절 스타일을 다음과 같은 방법으로 바꿀 수 있다.
+
+::
+
+  \HeadingSetup{
+      chapteralign=\raggedleft,
+      chapterfont=\sffamily\bfseries, chaptercolor=Maroon,
+      chapternamesize=\LARGE, chapternumbersize=\HUGE, chaptertitlesize=\huge,
+      sectionfont=\scshape, sectioncolor=NavyBlue,
+      sectionsize=\LARGE, subsectionsize=\Large, subsubsectionsize=\large,
+      sectionstyle=sparse,
+  }
+
+각 옵션 키의 의미는 다음과 같다.
+
+chapteralign
+  장 제목의 정렬
+
+chapterfont
+  장 제목의 폰트
+
+chaptercolor
+  장 제목의 색상
+
+chapternamesize
+  장 이름의 폰트 크기 (영어의 경우 'Chapter')
+
+chapternumbersize
+  장 번호의 폰트 크기
+
+chaptertitlesize
+  장 제목의 폰트 크기
+
+sectionfont
+  절 제목의 폰트 (하위 절에도 적용)
+
+sectioncolor 
+  절 제목의 색상 (하위 절에도 적용)
+
+sectionsize
+  절 제목의 폰트 크기
+
+sectionstyle
+  절 제목의 앞과 뒤의 간격. `sparse`, `firm`, `tight`\ 를 지정할 수 있다.
+
+소스 코드의 폰트는 다음과 같은 방법으로 바꿀 수 있다.
+
+::
+  
+  \ReferenceSetup{font=\sffamily\small}
+
+.. _latexmodule:
+
+스핑크스의 레이텍 모듈
+========================
+
+modules 디렉토리에 :index:`writer_latex.py`\ 와 :index:`builder_latex.py`\ 가 있다. 이 파일들은 스핑크스 패키지의 디렉토리로부터 복사되었다. writer_latex.py의 원본은 writers/latex.py이고, builder_latex.py의 원본은 builders/latex.py이다.
+
+writer_latex.py
+---------------
+
+여러 문서들이 레이텍 템플릿과 스타일 파일들을 공통으로 사용할 수 있게 하려는 목적으로 docs/_templates 디렉토리가 만들어졌으나 스핑크스의 writers/latex.py 모듈은 설정 파일의 templates_path 옵션에 지정된 경로를 사용하지 않는다. 이 문제를 해결하기 위하여 다음의 코드가 수정되었다.
+
+890:
+::
+
+  (+) if not path.exists(template_path):
+  (+)     template_path = path.join(self.builder.config.templates_path[1], template_name)
+
+conf.py의 latex_elements에 추가된 language와 fontsize 옵션이 임의로 추가된 것이어서 레이텍 변환에서 경고 메시지를 일으킨다. 그 문제를 회피하기 위해 다음의 코드가 주석으로 바뀌었다.
+
+549:
+::
+
+  (-) self.check_latex_elements()
+  (+) #self.check_latex_elements()
+
+HTML 문서에서와는 다르게, 레이텍 문서에서 ``note`` 같은 경고문의 제목에 콜론이 추가된다. 콜론이 추가되지 않도록 다음의 코드가 수정되었다.
+
+1883:
+::
+
+  (-) self.body.append(u'\n\\begin{sphinxadmonition}{%s}{%s:}' %
+  (+) self.body.append(u'\n\\begin{sphinxadmonition}{%s}{%s}' %
+
+경고문 마크업에 대해 :ref:`rst-admonition`\ 를 보라.
+
+builder_latex.py
+----------------
+
+스핑크스는 레이텍 문서를 생성할 때, HTML 문서를 생성할 때와 달리, 이미지 파일들을 위한 서브디렉토리를 만들지 않는다. 따라서 이미지 파일들도 _build/latex 디렉토리에 복사된다. 이미지 파일들을 위한 서브디렉토리를 만들도록 다음과 같은 코드가 추가되었다.
+
+249:
+::
+
+  (+) imgdir = path.join(self.outdir, 'images')
+  (+) if not os.path.exists(imgdir):
+  (+)  os.makedirs(imgdir)
+
+그리고 그 서브디렉토리가 이미지 파일들의 복사 목적지가 되도록 다음의 코드가 수정되었다.
+
+260:
+::
+
+  (-) path.join(self.outdir, dest))
+  (+) path.join(imgdir, dest))

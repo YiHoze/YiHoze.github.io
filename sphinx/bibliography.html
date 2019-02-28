@@ -1,0 +1,341 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>11. 참고 문헌 &mdash; 주피터와 스핑크스를 이용한 문서화 방법 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="색인"
+              href="genindex.html"/>
+        <link rel="search" title="검색" href="search.html"/>
+    <link rel="top" title="주피터와 스핑크스를 이용한 문서화 방법 1.0 documentation" href="index.html"/>
+        <link rel="prev" title="10. 주피터 노트북을 PDF로 만들기" href="nb2pdf.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> 주피터와 스핑크스를 이용한 문서화 방법
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+  
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">1. 소개</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">2. 소프트웨어 설치</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyscripts.html">3. 문서 생성을 위한 파이썬 스크립트</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">4. 문서화 설정</a></li>
+<li class="toctree-l1"><a class="reference internal" href="syntax_reST.html">5. 스핑크스 문법</a></li>
+<li class="toctree-l1"><a class="reference internal" href="syntax_notebook.html">6. 주피터 문법</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reST_in_notebook.html">7. 주피터에서 스핑크스 문법으로 작성하기</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docstring.html">8. 독스트링</a></li>
+<li class="toctree-l1"><a class="reference internal" href="latex_template.html">9. 레이텍 템플릿과 스타일</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nb2pdf.html">10. 주피터 노트북을 PDF로 만들기</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">11. 참고 문헌</a></li>
+</ul>
+
+            
+          
+  <a href="genindex.html">색인</a>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">주피터와 스핑크스를 이용한 문서화 방법</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">처음</a> &raquo;</li>
+        
+      <li>11. 참고 문헌</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/bibliography.rst.txt" rel="nofollow"> 페이지 소스</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast,
+.nboutput.nblast {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast + .nbinput {
+    margin-top: -19px;
+}
+
+/* nice headers on first paragraph of info/warning boxes */
+.admonition .first {
+    margin: -12px;
+    padding: 6px 12px;
+    margin-bottom: 12px;
+    color: #fff;
+    line-height: 1;
+    display: block;
+}
+.admonition.warning .first {
+    background: #f0b37e;
+}
+.admonition.note .first {
+    background: #6ab0de;
+}
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+</style>
+<div class="section" id="id1">
+<h1>11. 참고 문헌<a class="headerlink" href="#id1" title="제목 주소">¶</a></h1>
+</div>
+<p id="bibtex-bibliography-bibliography-0"><table class="docutils citation" frame="void" id="sphinx" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[BT17]</td><td>Georg Brandl and The&nbsp;Sphinx Team. <em>Sphinx Documentation</em>. 2017. URL: <a class="reference external" href="http://www.sphinx-doc.org/en/stable/contents.html">http://www.sphinx-doc.org/en/stable/contents.html</a>.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="texguide" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[KD03]</td><td>Helmut Kopka and Patrick&nbsp;W. Daly. <em>Guide to LaTeX</em>. Addison-Wesley Professional, fourth edition, 2003.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="powerhsell" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[Mic17]</td><td>Microsoft. <em>PowerShell Reference</em>. 2017. URL: <a class="reference external" href="https://msdn.microsoft.com/powershell/reference/readme">https://msdn.microsoft.com/powershell/reference/readme</a>.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="texcomp" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[M+04]</td><td>Frank Mittelbach and others. <em>The LaTeX Companion</em>. Addison-Wesley Professional, second edition, 2004.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="graphics" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[Pro16]</td><td>The&nbsp;LaTeX3 Project. <em>Packages in The 'graphics' bundle</em>. 2016.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="latex3" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[Pro17]</td><td>The&nbsp;LaTeX3 Project. <em>The LaTeX3 Interface</em>. 2017.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="fontspec" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[RH17]</td><td>Will Robertson and Khaled Hosny. <em>The Fontspec Package</em>. 2017.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="jupyter" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[Tea16]</td><td>Jupyter Team. <em>The Jupyter Notebook</em>. 2016. URL: <a class="reference external" href="http://jupyter-notebook.readthedocs.io/en/latest/index.html">http://jupyter-notebook.readthedocs.io/en/latest/index.html</a>.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="memoir" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[WM16]</td><td>Peter Wilson and Lars Madsen. <em>The Memoir Class for Configurable Typesetting</em>. The Herries Press, eighth edition, 2016.</td></tr>
+</tbody>
+</table>
+<table class="docutils citation" frame="void" id="xetexko" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label">[16]</td><td>김도현. <em>XeTeX-ko 간단 매뉴얼</em>. 2016.</td></tr>
+</tbody>
+</table>
+</p>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="nb2pdf.html" class="btn btn-neutral" title="10. 주피터 노트북을 PDF로 만들기" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 이전</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+      <script type="text/javascript" src="_static/MathJaxPath.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

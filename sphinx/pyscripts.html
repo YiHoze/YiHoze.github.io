@@ -1,0 +1,547 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>3. 문서 생성을 위한 파이썬 스크립트 &mdash; 주피터와 스핑크스를 이용한 문서화 방법 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="색인"
+              href="genindex.html"/>
+        <link rel="search" title="검색" href="search.html"/>
+    <link rel="top" title="주피터와 스핑크스를 이용한 문서화 방법 1.0 documentation" href="index.html"/>
+        <link rel="next" title="4. 문서화 설정" href="configuration.html"/>
+        <link rel="prev" title="2. 소프트웨어 설치" href="installation.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> 주피터와 스핑크스를 이용한 문서화 방법
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+  
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">1. 소개</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">2. 소프트웨어 설치</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">3. 문서 생성을 위한 파이썬 스크립트</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#docenv-ini">3.1. docenv.ini</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#texini-exe">3.2. texini.exe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#docbuild-exe">3.3. docbuild.exe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#imgsize-exe">3.4. imgsize.exe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#imginfo-exe">3.5. imginfo.exe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#xlt-exe">3.6. xlt.exe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#bmind-exe">3.7. bmind.exe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#autojosa-exe">3.8. autojosa.exe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#strrep-exe">3.9. strrep.exe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#open-exe">3.10. open.exe</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">4. 문서화 설정</a></li>
+<li class="toctree-l1"><a class="reference internal" href="syntax_reST.html">5. 스핑크스 문법</a></li>
+<li class="toctree-l1"><a class="reference internal" href="syntax_notebook.html">6. 주피터 문법</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reST_in_notebook.html">7. 주피터에서 스핑크스 문법으로 작성하기</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docstring.html">8. 독스트링</a></li>
+<li class="toctree-l1"><a class="reference internal" href="latex_template.html">9. 레이텍 템플릿과 스타일</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nb2pdf.html">10. 주피터 노트북을 PDF로 만들기</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bibliography.html">11. 참고 문헌</a></li>
+</ul>
+
+            
+          
+  <a href="genindex.html">색인</a>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">주피터와 스핑크스를 이용한 문서화 방법</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">처음</a> &raquo;</li>
+        
+      <li>3. 문서 생성을 위한 파이썬 스크립트</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/pyscripts.rst.txt" rel="nofollow"> 페이지 소스</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast,
+.nboutput.nblast {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast + .nbinput {
+    margin-top: -19px;
+}
+
+/* nice headers on first paragraph of info/warning boxes */
+.admonition .first {
+    margin: -12px;
+    padding: 6px 12px;
+    margin-bottom: 12px;
+    color: #fff;
+    line-height: 1;
+    display: block;
+}
+.admonition.warning .first {
+    background: #f0b37e;
+}
+.admonition.note .first {
+    background: #6ab0de;
+}
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+</style>
+<div class="section" id="id1">
+<h1>3. 문서 생성을 위한 파이썬 스크립트<a class="headerlink" href="#id1" title="제목 주소">¶</a></h1>
+<p>이전 판은 스핑크스와 레이텍을 위한 래퍼 (wrapper) 프로그램으로서 파워셸 스크립트들을 제공했다. 이 판은 그것들을 대체하는, 파이썬으로 작성된 프로그램들을 소스 코드와 함께 제공한다.</p>
+<p>이전 판과 가장 큰 차이는, 실행 파일들이기 때문에, 파워셸을 더 이상 사용하지 않아도 된다는 것이다. 따라서 WinPython/scripts에 있는 개시 (launch) 스크립트들을 상황에 따라 자유롭게 사용할 수 있다. 물론 docs/bin 디렉토리는 PATH 환경 변수에 포함되어야 한다. 또는 그 디렉토리에 있는 모든 파일들을 PATH 변수에 포함된 디렉토리로 옮겨야 한다. bin 디렉토리의 위치에 대해서는 <a class="reference internal" href="introduction.html#directorytree"><span class="std std-ref">문서 디렉토리 구조</span></a>를 보라.</p>
+<p>다음과 같은 방법으로 각 스크립트의 사용법을 볼 수 있다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span><span class="n">foo</span><span class="o">.</span><span class="n">exe</span> <span class="o">-</span><span class="n">h</span>
+</pre></div>
+</div>
+<div class="section" id="docenv-ini">
+<h2>3.1. docenv.ini<a class="headerlink" href="#docenv-ini" title="제목 주소">¶</a></h2>
+<p>파워셸 스크립트들의 대부분이 특정 프로그램이나 작업 디렉토리의 경로를 가리키는 변수들을 포함하고 있고, 사용자의 실제 컴퓨터 환경에 맞게 그 변수들의 값을 고쳐야 했다. 이제는 그것을 보다 쉽게 할 수 있다. 래퍼 프로그램들은 <span class="target" id="index-0"></span>docenv.ini 파일을 참조한다. 예를 들어, svg2pdf.exe는 docenv.ini를 참조하여 잉크스케이프의 경로를 얻는다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">Inkscape</span><span class="p">]</span>
+<span class="n">path</span> <span class="o">=</span> <span class="n">C</span><span class="p">:</span>\<span class="n">Program</span> <span class="n">Files</span>\<span class="n">Inkscape</span>\<span class="n">inkscape</span><span class="o">.</span><span class="n">com</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="texini-exe">
+<span id="texini"></span><h2>3.2. texini.exe<a class="headerlink" href="#texini-exe" title="제목 주소">¶</a></h2>
+<p>이전 판은 스핑크스가 문서를 레이텍으로 변환할 때마다 docs/_templates 디렉토리에 있는 karisphinx.sty 같은 레이텍 스타일 파일들을 ./_build/latex 디렉토리로 복사했다. 이 방식은 nb2pdf.ps1을 이용하여 주피터 노트북 파일을 PDF로 변환할 때 레이텍이 hzguide.cls 파일을 찾지 못하는 문제를 예상하지 못했다. 그래서 이 판은 그 스타일 파일들이 텍 라이브의 로컬 TeXMF 디렉토리에 있다고 전제하도록 변경했다. <a class="reference internal" href="installation.html#texlive"><span class="std std-ref">텍 라이브</span></a>를 보라.</p>
+<p><span class="target" id="index-1"></span>texini.exe가 그 레이텍 스타일 파일들을 로컬 TeXMF 디렉토리로 복사한다. 이 프로그램을 실행하기 전에 docenv.ini 파일의 TeX Live 섹션이 제대로 설정되어 있는지 확인하라. 추가로 다음과 같은 옵션들을 사용할 수 있다.</p>
+<table class="docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-d</span></kbd></td>
+<td>이 문서화 시스템의 bin 디렉토리를 환경 변수로 저장한다. 파워셸 창에서 작업하는 경우에는 이 설정이 불필요하지만, cmd 창에서 작업하는 경우에는 반드시 필요하다.</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-p</span></kbd></td>
+<td>SumatraPDF의 인버스 서치 기능을 활성화한다. <a class="reference internal" href="installation.html#sumatra-pdf"><span class="std std-ref">SumatraPDF</span></a>를 보라.</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-e</span></kbd></td>
+<td>TEXEDIT 환경 변수를 설정한다. <a class="reference internal" href="#xlt">xlt</a>를 보라.</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-f</span></kbd></td>
+<td>레이텍(XeLaTeX)이 사용할 수 있도록 폰트를 캐시한다. 폰트를 추가할 때마다 폰트 캐시를 해야 한다. <a class="reference internal" href="installation.html#fonts"><span class="std std-ref">폰트</span></a>를 보라.</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-u</span></kbd></td>
+<td>텍 라이브를 업데이트한다. 텍 라이브 업데이트를 위해서는 인터넷 접근이 허용되어야 한다.</td></tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="docbuild-exe">
+<h2>3.3. docbuild.exe<a class="headerlink" href="#docbuild-exe" title="제목 주소">¶</a></h2>
+<p><span class="target" id="index-2"></span>docbuild.exe는 이전 판의 docbuild.ps1을 대체한다. 이 프로그램은 sphinx-build 프로그램을 호출하여 HTML 또는 레이텍 문서를 생성하고 다음과 같은 일들을 추가로 처리한다.</p>
+<ul class="simple">
+<li>앞서 생성된 블록 다이어그램 파일들(.pdf)이 있으면 삭제한다.</li>
+<li>레이텍 컴파일을 수행하기 전에 SVG 이미지 파일들이 있으면 그것들을 PDF로 변환한다. 이 처리는 잉크스케이프를 요구한다. <a class="reference internal" href="installation.html#inkscape-svg"><span class="std std-ref">잉크스케이프</span></a>를 보라.</li>
+</ul>
+<p>다음과 같은 옵션들을 사용할 수 있다.</p>
+<table class="docutils option-list" frame="void" rules="none">
+<col class="option" />
+<col class="description" />
+<tbody valign="top">
+<tr><td class="option-group">
+<kbd><span class="option">-s</span></kbd></td>
+<td>소스 디렉토리를 지정하라. 디폴트는 현재 디렉토리이다.</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-b</span></kbd></td>
+<td>빌드 디렉토리를 지정하라. 디폴트는 '_build'이다.</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-t</span></kbd></td>
+<td>텍 파일의 이름을 지정하라.</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-o</span></kbd></td>
+<td>텍 파일이 한 번 컴파일된다.</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-w</span></kbd></td>
+<td>텍 파일이 두 번 컴파일된다.</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-f</span></kbd></td>
+<td>텍 파일이 세 번 컴파일된다. 색인 파일이 있으면 지정된 언어의 알파벳순으로 정렬되고, 텍 파일이 한 번 더 컴파일된다. 컴파일이 완료된 뒤에 .aux와 같은 부수 파일들이 삭제된다.</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-l</span></kbd></td>
+<td>'german' 또는 'ger'와 같이 색인 정렬을 위한 언어를 지정하라. 디폴트는 'korean'이다.</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-j</span></kbd></td>
+<td>autojosa.exe가 호출된다. <a class="reference internal" href="#autojosa-exe">autojosa.exe</a>를 보라.</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-e</span></kbd></td>
+<td>strrep.exe가 호출된다. <a class="reference internal" href="#strrep-exe">strrep.exe</a>를 보라. 이전 판에서는 이 옵션에 해당하는 기능이 자동으로 작동한다.</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-k</span></kbd></td>
+<td>.aux와 같은 부수 파일들이 삭제되지 않는다. 이 옵션은 -f 옵션을 준 경우에만 유효하다.</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-m</span></kbd></td>
+<td>bmind.exe가 호출된다. <a class="reference internal" href="#bmind-exe">bmind.exe</a>를 보라. 이전 판에서는 이 옵션에 해당하는 기능이 자동으로 작동한다.</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-c</span></kbd></td>
+<td>빌드 디렉토리가 삭제된다.</td></tr>
+<tr><td class="option-group">
+<kbd><span class="option">-p</span></kbd></td>
+<td>SVG 파일을 PDF로 변환하는 과정이 생략된다.</td></tr>
+</tbody>
+</table>
+<p>docbuild.exe는 각 문서 디렉토리에 있는, 다음과 같은 <span class="target" id="index-3"></span>m.cmd에 의해 사용된다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docbuild</span><span class="o">.</span><span class="n">exe</span> <span class="o">-</span><span class="n">t</span> <span class="n">foo</span><span class="o">.</span><span class="n">tex</span> <span class="o">%*</span>
+</pre></div>
+</div>
+<p>영어 문서인 경우에 색인 정렬을 위한 언어 옵션을 추가해야 한다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docbuild</span><span class="o">.</span><span class="n">exe</span> <span class="o">-</span><span class="n">t</span> <span class="n">foo</span><span class="o">.</span><span class="n">tex</span> <span class="o">-</span><span class="n">l</span> <span class="n">english</span> <span class="o">%*</span>
+</pre></div>
+</div>
+<p>pyFlutter 매뉴얼과 같이 파이썬 API를 포함하는 문서를 위해서는 다음과 같이 옵션을 추가해야 한다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">docbuild</span><span class="o">.</span><span class="n">exe</span> <span class="o">-</span><span class="n">t</span> <span class="n">foo</span><span class="o">.</span><span class="n">tex</span> <span class="o">-</span><span class="n">m</span> <span class="o">%*</span>
+</pre></div>
+</div>
+<p>-t 옵션에 주어지는 레이텍 파일의 이름은 conf.py 파일에 명시된 것과 동일해야 한다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">latex_documents</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">(</span><span class="n">master_doc</span><span class="p">,</span> <span class="s1">&#39;foo.tex&#39;</span><span class="p">,</span> <span class="s1">&#39;제목&#39;</span><span class="p">,</span> <span class="s1">&#39;저자&#39;</span><span class="p">,</span> <span class="s1">&#39;manual&#39;</span><span class="p">),</span>
+<span class="p">]</span>
+</pre></div>
+</div>
+<p>m.cmd에 추가로 주어지는 옵션들은 docbuild.exe에 그대로 전달된다.</p>
+<p>HTML 문서를 만들려면 다음과 같이 한다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span><span class="n">m</span><span class="o">.</span><span class="n">cmd</span> <span class="n">html</span>
+</pre></div>
+</div>
+<p>레이텍 문서를 만들고 한 번 컴파일하려면 다음과 같이 한다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span><span class="n">m</span><span class="o">.</span><span class="n">cmd</span> <span class="n">latex</span> <span class="o">-</span><span class="n">o</span>
+</pre></div>
+</div>
+<p>레이텍은 SVG 이미지 형식을 지원하지 않는다. 이 문제를 해결하기 위해 레이텍 컴파일이 시작되기 전에 <span class="target" id="index-4"></span>svg2pdf.exe가 호출된다. 이전 판의 svg2pdf.ps1을 대체하는 이 프로그램은 잉크스케이프를 이용하여 SVG 이미지 파일을 PDF로 변환한다. 주피터나 스핑크스에 의해 만들어진 SVG 이미지들이 다소 넓은 여백을 갖고 있다. svg2pdf.exe는 SVG 파일들을 PDF로 변환한 뒤에 이미지에서 여백을 잘라내기 위해 <span class="target" id="index-5"></span>pdfcrop.exe를 호출한다. pdfcrop.exe는 텍 라이브에 포함되어 있다.</p>
+<p>레이텍 문서를 만들고 온전한 문서가 될 때까지 여러 차례 컴파일하려면 다음과 같이 한다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;.</span>\<span class="n">m</span><span class="o">.</span><span class="n">cmd</span> <span class="n">latex</span> <span class="o">-</span><span class="n">f</span>
+</pre></div>
+</div>
+<p>이 경우에 컴파일이 완료된 뒤에 컴파일 과정에서 생긴 .aux를 비롯한 부수 파일들을 삭제하기 위해 <span class="target" id="index-6"></span>texclean.exe가 호출된다.</p>
+<p>_build 디렉토리를 삭제하려면 다음과 같이 한다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;.</span>\<span class="n">m</span><span class="o">.</span><span class="n">cmd</span> <span class="o">-</span><span class="n">c</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="imgsize-exe">
+<span id="imgsize"></span><h2>3.4. imgsize.exe<a class="headerlink" href="#imgsize-exe" title="제목 주소">¶</a></h2>
+<p><span class="target" id="index-7"></span>imgsize.exe는 이전 판의 imgsize.ps1을 대체한다. 이 프로그램은 <span class="target" id="index-8"></span>이미지매직 (<span class="target" id="index-9"></span>ImageMagick)을 이용하여 이미지 파일의 화소 밀도를 바꾼다. 픽셀 크기를 바꾸는 것도 가능하다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span><span class="n">imgsize</span><span class="o">.</span><span class="n">exe</span> <span class="o">*.</span><span class="n">png</span>
+</pre></div>
+</div>
+<p>이 명령은 PNG 파일들을 하나씩 다음과 같이 처리한다.</p>
+<ol class="arabic simple">
+<li>이미지 폭을 픽셀 단위로 잰다.</li>
+<li>이미지 폭이 주어진 최대 허용 길이보다 작다면 주어진 값으로 화소 밀도를 바꾼다.</li>
+<li>그렇지 않다면 이미지 폭을 최대 허용 크기로 나누어 구한 값으로 화소 밀도를 바꾼다.</li>
+</ol>
+<p>결과적으로 이것은 PDF 문서의 글줄 길이보다 크지 않도록 이미지의 폭을 조정한다. 디폴트 화소 밀도는 80 ppc이고 디폴트 허용 크기는 1000 픽셀이다. 이것의 절대 크기는 12.5 cm이다. 만약 어떤 이미지의 폭이 1200 픽셀이라면, 화소 밀도는 96 ppc로 결정되고 그 이미지의 절대 크기는 12.5 cm가 된다.</p>
+<p>화소 밀도와 허용 크기를 바꾸려면 다음과 같이 한다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span><span class="n">imgsize</span><span class="o">.</span><span class="n">exe</span> <span class="o">*.</span><span class="n">png</span> <span class="o">-</span><span class="n">d</span> <span class="mi">100</span> <span class="o">-</span><span class="n">m</span> <span class="mi">1200</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="imginfo-exe">
+<h2>3.5. imginfo.exe<a class="headerlink" href="#imginfo-exe" title="제목 주소">¶</a></h2>
+<p><span class="target" id="index-10"></span>imginfo.exe는 이미지매직을 이용하여 픽셀 크기와 같은 이미지 파일의 기본 정보를 보여준다. imgsize.exe 프로그램이 이미지들을 제대로 처리했는지 확인하기 위한 목적으로 이 프로그램이 고안되었다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span><span class="n">imginfo</span><span class="o">.</span><span class="n">exe</span> <span class="n">foo</span><span class="o">.</span><span class="n">png</span>
+
+<span class="n">Geometry</span><span class="p">:</span> <span class="mi">814</span> <span class="n">x</span> <span class="mi">534</span> <span class="o">+</span> <span class="mi">0</span> <span class="o">+</span> <span class="mi">0</span>
+<span class="n">Resolution</span><span class="p">:</span> <span class="mi">80</span> <span class="n">x</span> <span class="mi">80</span>
+<span class="n">Print</span> <span class="n">size</span><span class="p">:</span> <span class="mf">10.175</span> <span class="n">x</span> <span class="mf">6.675</span>
+<span class="n">Units</span><span class="p">:</span> <span class="n">PixelsPerCentimeter</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="xlt-exe">
+<span id="xlt"></span><h2>3.6. xlt.exe<a class="headerlink" href="#xlt-exe" title="제목 주소">¶</a></h2>
+<p><span class="target" id="index-11"></span>xlt.exe가 이전 판의 tex2pdf.ps1 스크립트를 대체한다.
+<a class="reference internal" href="#docbuild-exe">docbuild.exe</a>는 레이텍 컴파일에서 발생할 수 있는 오류에 대응하도록 고안되지 않았다. docbuild.exe가 시도한 레이텍 컴파일에서 오류가 발생하면 xlt.exe를 이용하여 그 원인을 파악하라. 이 프로그램은 xelatex의 사용을 간편화한 것에 불과하다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span><span class="n">xlt</span><span class="o">.</span><span class="n">exe</span> <span class="n">foo</span><span class="o">.</span><span class="n">tex</span>
+</pre></div>
+</div>
+<p>컴파일 중에 오류가 발생하면 다음과 같이 표시된다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>l.63
+?
+</pre></div>
+</div>
+<p>이것은 63번 줄에서 오류가 발생했음을 나타낸다. <code class="docutils literal notranslate"><span class="pre">x</span></code>를 입력하면 컴파일이 중단된다. <code class="docutils literal notranslate"><span class="pre">e</span></code>를 입력하면 <span class="target" id="index-12"></span>TEXEDIT 환경 변수에 지정된 텍스트 에디터에서 소스 파일이 열리고 커서가 문제의 줄에 위치하게 된다.
+TEXEDIT 환경 변수에는 텍스트 에디터(PATH 환경 변수에 포함되어 있지 않다면 그 경로를 포함하여)와 그 에디터가 취하는 패러미터 형식이 함께 설정되어야 한다. 패러미터 형식은 에디터에 따라 다르다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">atom</span><span class="o">.</span><span class="n">cmd</span> <span class="o">%</span><span class="n">s</span><span class="p">:</span><span class="o">%</span><span class="n">d</span>
+<span class="n">code</span><span class="o">.</span><span class="n">cmd</span> <span class="o">-</span><span class="n">g</span> <span class="o">%</span><span class="n">s</span><span class="p">:</span><span class="o">%</span><span class="n">d</span>
+<span class="n">emeditor</span><span class="o">.</span><span class="n">exe</span> <span class="o">/</span><span class="n">l</span> <span class="o">%</span><span class="n">d</span> <span class="o">%</span><span class="n">s</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">%s</span></code>는 파일 경로를, <code class="docutils literal notranslate"><span class="pre">%d</span></code>는 행 번호를 나타낸다.
+<a class="reference internal" href="#texini">texini</a>를 보라.</p>
+</div>
+<div class="section" id="bmind-exe">
+<h2>3.7. bmind.exe<a class="headerlink" href="#bmind-exe" title="제목 주소">¶</a></h2>
+<p><span class="target" id="index-13"></span>bmind.exe는 이전 판의 bmind.ps1을 대체한다. 이 프로그램은  <a class="reference internal" href="#docbuild-exe">docbuild.exe</a> 또는 <a class="reference internal" href="#xlt-exe">xlt.exe</a>에 의해 텍 파일이 컴파일될 때 사용된다. 이 프로그램은 .ind 파일을 조작하여 색인 항목들을 PDF 책갈피에 추가한다. 독스트링으로부터 추출된 파이썬 함수들만을 PDF 책갈피에 추가하려면 -p 옵션을 사용해야 한다.
+<a class="reference internal" href="docstring.html"><span class="doc">독스트링</span></a>을 보라.</p>
+</div>
+<div class="section" id="autojosa-exe">
+<h2>3.8. autojosa.exe<a class="headerlink" href="#autojosa-exe" title="제목 주소">¶</a></h2>
+<p>한국어의 특징들 가운데 하나가 앞 글자의 끝소리에 따라 조사가 바뀐다는 것이다. 이것은 상호참조에서 약간의 문제를 일으킨다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">식</span> \<span class="n">eqref</span><span class="p">{</span><span class="n">foo</span><span class="p">}</span><span class="n">를</span> <span class="n">보시오</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>이 예의 결과가 '식 1를'이라면 어색하게 들린다. 이 문제를 해결하기 위하여 KoTeX 레이텍 패키지는 다음과 같은 자동조사 매크로들을 제공한다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>\<span class="n">은</span><span class="p">,</span> \<span class="n">는</span><span class="p">,</span> \<span class="n">이</span><span class="p">,</span> \<span class="n">가</span><span class="p">,</span> \<span class="n">을</span><span class="p">,</span> \<span class="n">를</span><span class="p">,</span> \<span class="n">와</span><span class="p">,</span> \<span class="n">과</span><span class="p">,</span> \<span class="n">로</span><span class="p">,</span> \<span class="n">으로</span><span class="p">,</span> \<span class="n">라</span><span class="p">,</span> \<span class="n">이라</span>
+</pre></div>
+</div>
+<p>자동조사 매크로는 앞 글자의 끝소리에 맞게 조사를 붙인다.
+<span class="target" id="index-14"></span>autojosa.exe는 텍 파일에서 상호참조 매크로를 찾아 조사를 자동조사 매크로로 바꾼다. 위의 예는 아래와 같이 바뀌게 된다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">식</span> \<span class="n">eqref</span><span class="p">{</span><span class="n">foo</span><span class="p">}</span>\<span class="n">를</span> <span class="n">보시오</span><span class="o">.</span>
+</pre></div>
+</div>
+<p>사용법은 다음과 같다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span><span class="n">autojosa</span><span class="o">.</span><span class="n">exe</span> <span class="n">foo</span><span class="o">.</span><span class="n">tex</span>
+</pre></div>
+</div>
+<p><a class="reference internal" href="#docbuild-exe">docbuild.exe</a>에 -j 옵션이 주어지면 autojosa.exe가 호출된다.</p>
+</div>
+<div class="section" id="strrep-exe">
+<h2>3.9. strrep.exe<a class="headerlink" href="#strrep-exe" title="제목 주소">¶</a></h2>
+<p>레이텍이 제대로 처리하지 못하는 문자열을 스핑크스가 만들어낼 수도 있다.
+예를 들어, 주피터에서 어떤 코드가 다음과 같이 공백없는 긴 문자열을 만들어내었다고 가정하자.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">order</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span><span class="mi">12</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span><span class="mi">14</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">16</span><span class="p">,</span><span class="mi">17</span><span class="p">,</span><span class="mi">18</span><span class="p">,</span><span class="mi">19</span><span class="p">,</span><span class="mi">20</span><span class="p">,</span><span class="mi">21</span><span class="p">,</span><span class="mi">22</span><span class="p">,</span><span class="mi">23</span><span class="p">,</span><span class="mi">24</span><span class="p">,</span><span class="mi">25</span><span class="p">,</span><span class="mi">26</span><span class="p">,</span><span class="mi">27</span><span class="p">,</span><span class="mi">28</span><span class="p">,</span><span class="mi">29</span><span class="p">,</span><span class="o">...</span>
+</pre></div>
+</div>
+<p>레이텍의 정렬 (justification) 알고리듬은 공백없는 문자열을 두 줄로 나누지 못한다.
+위의 문자열은 오른쪽 여백까지 이어져서 페이지 밖으로 나가버리게 된다.
+이 문제를 피하려면 다음과 같이 바뀌어야 한다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">order</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span><span class="mi">11</span><span class="p">,</span>\<span class="n">mbox</span><span class="p">{}</span><span class="mi">12</span><span class="p">,</span><span class="mi">13</span><span class="p">,</span>\<span class="n">mbox</span><span class="p">{}</span><span class="mi">14</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span>\<span class="n">mbox</span><span class="p">{}</span><span class="mi">16</span><span class="p">,</span><span class="mi">17</span><span class="p">,</span>\<span class="n">mbox</span><span class="p">{}</span><span class="o">...</span>
+</pre></div>
+</div>
+<p>이와 같은 처리를 위해 <span class="target" id="index-15"></span>strrep.exe가 고안되었다.
+이 프로그램은 이전 판의 literal.ps1 스크립트를 대체한다.
+<a class="reference internal" href="#docbuild-exe">docbuild.exe</a>에 -e 옵션이 주어지면 strrep.exe가 호출된다.</p>
+<p>strrep.exe는 docenv.ini 파일의 String Replacement 섹션에 지정된 문자열 패턴 파일을 참조하여 텍 파일에서 특정 문자열들을 찾아 바꾼다.
+디폴트 패턴 파일은 <span class="target" id="index-16"></span>strpattern.tsv이다. strrep은 현재 작업디렉토리에서 strpattern.tsv를 찾고, 없으면 strrep이 위치한 디렉토리에서 찾는다.
+다른 패턴 파일을 지정하는 것이 가능하다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">&gt;</span><span class="n">strrep</span><span class="o">.</span><span class="n">exe</span> <span class="n">foo</span><span class="o">.</span><span class="n">tex</span> <span class="o">-</span><span class="n">p</span> <span class="n">mypattern</span><span class="o">.</span><span class="n">tsv</span>
+</pre></div>
+</div>
+<p>디폴트 패턴 파일로 사용되는 strpattern.tsv는 다음과 같은 조건들로 만들어졌다.</p>
+<ul class="simple">
+<li>두 개의 칼럼이 존재한다.</li>
+<li>탭 문자로 칼럼이 구분된다.</li>
+<li>첫 칼럼은 찾을 문자열을, 둘째 칼럼은 바뀔 문자열을 나타낸다.</li>
+<li>정규표현식을 사용할 수 있다.</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>&quot;(\d\d),(\d\d),&quot; → &quot;\1,\mbox{}\2,\mbox{}&quot;
+</pre></div>
+</div>
+<p>대부분의 경우에 이 문자열 치환 처리는 필요하지 않을 것이다.
+그러나 즉각 해결하기 어려운, 예상치 못한 문제가 발생했을 때 이 방법이 유용할 것이다.</p>
+</div>
+<div class="section" id="open-exe">
+<h2>3.10. open.exe<a class="headerlink" href="#open-exe" title="제목 주소">¶</a></h2>
+<p><span class="target" id="index-17"></span>open.exe는 docenv.ini 파일의 Text Editor 섹션에 지정된 확장자를 가진 파일들을 지정된 에디터를 이용하여 연다. 다른 확장자들을 가진 파일들은 그것들과 연결된 응용 프로그램에 의해 열린다. 이것은 결과적으로 탐색기에서 파일을 더블클릭하여 여는 것과 비슷하다.
+특이 기능은 -s 옵션을 이용하여 텍 라이브에 있는 파일들을 검색하여 열 수 있다는 것이다.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">open</span><span class="o">.</span><span class="n">exe</span> <span class="n">book</span><span class="o">.</span><span class="n">cls</span> <span class="o">-</span><span class="n">s</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="configuration.html" class="btn btn-neutral float-right" title="4. 문서화 설정" accesskey="n" rel="next">다음 <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="installation.html" class="btn btn-neutral" title="2. 소프트웨어 설치" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> 이전</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+      <script type="text/javascript" src="_static/MathJaxPath.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

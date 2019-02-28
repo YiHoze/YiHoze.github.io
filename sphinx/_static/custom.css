@@ -1,0 +1,96 @@
+@import "pygments.css";
+
+h1, h2, h3, h4, h5, h6 {
+	margin-top:1.25em;
+  margin-bottom:0.5em;
+}
+
+p {
+  margin-top: 5px !important;
+  margin-bottom: 5px !important;
+}
+
+em {
+ font-family: inherit;
+ font-style: normal;
+ font-weight: bolder; 
+ color: #a52a2a
+} 
+
+
+/*
+blockquote {
+  padding: 5px 10px;
+  margin: 0 0 10px;
+  font-size: 15px;
+  border-left: 5px solid #999;
+}
+*/
+
+code, .rst-content code {
+    border: none;
+    font-size: 90%;
+    padding: 0 0px;
+}
+
+
+.rst-content table.docutils.citation {
+ background:none;
+ border:none;
+ color:#444
+}
+
+.codeblock, pre.literal-block, .rst-content .literal-block, .rst-content pre.literal-block, div[class^='highlight'] {
+	border:1px solid #e1e4e5;
+	padding:0px;
+	overflow-x:auto;
+	background:#fff;
+	margin:10px 0 10px 0
+}
+
+.rst-content code.literal {
+	background: none;
+}
+
+.rst-content .admonition {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding: 0px 12px 5px 12px;
+}
+
+div.figure p.caption span.caption-number {
+  font-style: normal;
+  font-weight: bold;
+  color: #333;
+}
+
+div.figure p.caption span.caption-text {
+  font-style: normal;
+  font-weight: bold;
+  color: #333;
+}
+
+table caption span.caption-number {
+	font-style: normal;
+  font-weight: bold;
+  color: #333
+}
+
+table caption span.caption-text {
+	font-style: normal;
+  font-weight: bold;
+  color: #333
+}
+
+th, td {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-style: normal;
+  font-size: 90%;
+  text-align: left;
+  padding: 5px;
+
+
+
+.rst-footer-buttons {
+	margin-top: 20px
+}
