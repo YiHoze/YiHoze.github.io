@@ -1,0 +1,404 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>차례 &mdash; 주피터와 스핑크스를 이용한 문서화 방법 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="./_static/css/theme.css" type="text/css" />
+  
+
+  
+    <link rel="stylesheet" href="./_static/custom.css" type="text/css" />
+  
+
+  
+        <link rel="index" title="색인"
+              href="genindex.html"/>
+        <link rel="search" title="검색" href="search.html"/>
+    <link rel="top" title="주피터와 스핑크스를 이용한 문서화 방법 1.0 documentation" href="#"/>
+        <link rel="next" title="1. 소개" href="introduction.html"/> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="#" class="icon icon-home"> 주피터와 스핑크스를 이용한 문서화 방법
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                2.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+  
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">1. 소개</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">2. 소프트웨어 설치</a></li>
+<li class="toctree-l1"><a class="reference internal" href="pyscripts.html">3. 문서 생성을 위한 파이썬 스크립트</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">4. 문서화 설정</a></li>
+<li class="toctree-l1"><a class="reference internal" href="syntax_reST.html">5. 스핑크스 문법</a></li>
+<li class="toctree-l1"><a class="reference internal" href="syntax_notebook.html">6. 주피터 문법</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reST_in_notebook.html">7. 주피터에서 스핑크스 문법으로 작성하기</a></li>
+<li class="toctree-l1"><a class="reference internal" href="docstring.html">8. 독스트링</a></li>
+<li class="toctree-l1"><a class="reference internal" href="latex_template.html">9. 레이텍 템플릿과 스타일</a></li>
+<li class="toctree-l1"><a class="reference internal" href="nb2pdf.html">10. 주피터 노트북을 PDF로 만들기</a></li>
+<li class="toctree-l1"><a class="reference internal" href="bibliography.html">11. 참고 문헌</a></li>
+</ul>
+
+            
+          
+  <a href="genindex.html">색인</a>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">주피터와 스핑크스를 이용한 문서화 방법</a>
+        
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="#">처음</a> &raquo;</li>
+        
+      <li>차례</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/index.rst.txt" rel="nofollow"> 페이지 소스</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  
+<style>
+/* CSS overrides for sphinx_rtd_theme */
+
+/* 24px margin */
+.nbinput.nblast,
+.nboutput.nblast {
+    margin-bottom: 19px;  /* padding has already 5px */
+}
+
+/* ... except between code cells! */
+.nblast + .nbinput {
+    margin-top: -19px;
+}
+
+/* nice headers on first paragraph of info/warning boxes */
+.admonition .first {
+    margin: -12px;
+    padding: 6px 12px;
+    margin-bottom: 12px;
+    color: #fff;
+    line-height: 1;
+    display: block;
+}
+.admonition.warning .first {
+    background: #f0b37e;
+}
+.admonition.note .first {
+    background: #6ab0de;
+}
+.admonition > p:before {
+    margin-right: 4px;  /* make room for the exclamation icon */
+}
+</style>
+<div class="section" id="id1">
+<h1>차례<a class="headerlink" href="#id1" title="제목 주소">¶</a></h1>
+<div class="toctree-wrapper compound" id="mastertoc">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">1. 소개</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#directorytree">1.1. 문서 디렉토리 구조</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#id3">1.2. 용어</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">2. 소프트웨어 설치</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#id2">2.1. 필요 소프트웨어</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#id3">2.2. 파이썬 패키지</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#id4">2.3. MathJax</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#texlive">2.4. 텍 라이브</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#sumatra-pdf">2.5. SumatraPDF</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#fonts">2.6. 폰트</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#id9">2.7. 그래픽 소프트웨어</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#inkscape-svg">2.7.1. 잉크스케이프</a></li>
+<li class="toctree-l3"><a class="reference internal" href="installation.html#id11">2.7.2. 이미지매직</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="pyscripts.html">3. 문서 생성을 위한 파이썬 스크립트</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="pyscripts.html#docenv-ini">3.1. docenv.ini</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyscripts.html#texini-exe">3.2. texini.exe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyscripts.html#docbuild-exe">3.3. docbuild.exe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyscripts.html#imgsize-exe">3.4. imgsize.exe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyscripts.html#imginfo-exe">3.5. imginfo.exe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyscripts.html#xlt-exe">3.6. xlt.exe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyscripts.html#bmind-exe">3.7. bmind.exe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyscripts.html#autojosa-exe">3.8. autojosa.exe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyscripts.html#strrep-exe">3.9. strrep.exe</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pyscripts.html#open-exe">3.10. open.exe</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">4. 문서화 설정</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="configuration.html#conf-py">4.1. conf.py</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configuration.html#conf-common-py">4.2. conf_common.py</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#mathjax">4.2.1. MathJax 경로</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#id2">4.2.2. 한국어 로캘</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#html">4.2.3. HTML 스타일</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#id3">4.2.4. HTML 템플릿</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#id4">4.2.5. 스핑크스의 레이텍 모듈</a></li>
+<li class="toctree-l3"><a class="reference internal" href="configuration.html#id5">4.2.6. 레이텍 스타일</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="syntax_reST.html">5. 스핑크스 문법</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="syntax_reST.html#id2">5.1. 차례 만들기</a></li>
+<li class="toctree-l2"><a class="reference internal" href="syntax_reST.html#id4">5.2. 절 제목</a></li>
+<li class="toctree-l2"><a class="reference internal" href="syntax_reST.html#id5">5.3. 문자 스타일</a></li>
+<li class="toctree-l2"><a class="reference internal" href="syntax_reST.html#id6">5.4. 이스케이프 문자</a></li>
+<li class="toctree-l2"><a class="reference internal" href="syntax_reST.html#id7">5.5. 마크업</a></li>
+<li class="toctree-l2"><a class="reference internal" href="syntax_reST.html#id8">5.6. 첨자</a></li>
+<li class="toctree-l2"><a class="reference internal" href="syntax_reST.html#id9">5.7. 소스 코드</a></li>
+<li class="toctree-l2"><a class="reference internal" href="syntax_reST.html#id10">5.8. 목록</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="syntax_reST.html#id11">5.8.1. 비순서 목록</a></li>
+<li class="toctree-l3"><a class="reference internal" href="syntax_reST.html#id12">5.8.2. 순서 목록</a></li>
+<li class="toctree-l3"><a class="reference internal" href="syntax_reST.html#id13">5.8.3. 정의 목록</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="syntax_reST.html#rst-admonition">5.9. 주의 또는 권고</a></li>
+<li class="toctree-l2"><a class="reference internal" href="syntax_reST.html#id15">5.10. 인용문</a></li>
+<li class="toctree-l2"><a class="reference internal" href="syntax_reST.html#id16">5.11. 상호참조</a></li>
+<li class="toctree-l2"><a class="reference internal" href="syntax_reST.html#id17">5.12. 수식</a></li>
+<li class="toctree-l2"><a class="reference internal" href="syntax_reST.html#id18">5.13. 그림</a></li>
+<li class="toctree-l2"><a class="reference internal" href="syntax_reST.html#id19">5.14. 표</a></li>
+<li class="toctree-l2"><a class="reference internal" href="syntax_reST.html#id20">5.15. 참고 문헌</a></li>
+<li class="toctree-l2"><a class="reference internal" href="syntax_reST.html#id21">5.16. 색인</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="syntax_notebook.html">6. 주피터 문법</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="syntax_notebook.html#절-제목">6.1. 절 제목</a></li>
+<li class="toctree-l2"><a class="reference internal" href="syntax_notebook.html#HTML-코드">6.2. HTML 코드</a></li>
+<li class="toctree-l2"><a class="reference internal" href="syntax_notebook.html#문자-스타일">6.3. 문자 스타일</a></li>
+<li class="toctree-l2"><a class="reference internal" href="syntax_notebook.html#이스케이프-문자">6.4. 이스케이프 문자</a></li>
+<li class="toctree-l2"><a class="reference internal" href="syntax_notebook.html#소스-코드">6.5. 소스 코드</a></li>
+<li class="toctree-l2"><a class="reference internal" href="syntax_notebook.html#목록">6.6. 목록</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="syntax_notebook.html#비순서-목록">6.6.1. 비순서 목록</a></li>
+<li class="toctree-l3"><a class="reference internal" href="syntax_notebook.html#순서-목록">6.6.2. 순서 목록</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="syntax_notebook.html#주의-또는-권고">6.7. 주의 또는 권고</a></li>
+<li class="toctree-l2"><a class="reference internal" href="syntax_notebook.html#수식">6.8. 수식</a></li>
+<li class="toctree-l2"><a class="reference internal" href="syntax_notebook.html#상호참조">6.9. 상호참조</a></li>
+<li class="toctree-l2"><a class="reference internal" href="syntax_notebook.html#그림">6.10. 그림</a></li>
+<li class="toctree-l2"><a class="reference internal" href="syntax_notebook.html#표">6.11. 표</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="reST_in_notebook.html">7. 주피터에서 스핑크스 문법으로 작성하기</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="reST_in_notebook.html#절의-구획">7.1. 절의 구획</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reST_in_notebook.html#주의-또는-권고">7.2. 주의 또는 권고</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reST_in_notebook.html#표">7.3. 표</a></li>
+<li class="toctree-l2"><a class="reference internal" href="reST_in_notebook.html#표-대신-그림">7.4. 표 대신 그림</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="docstring.html">8. 독스트링</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="docstring.html#id2">8.1. 제목</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docstring.html#id3">8.2. 함수</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docstring.html#id4">8.3. 수식</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="latex_template.html">9. 레이텍 템플릿과 스타일</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="latex_template.html#id2">9.1. 레이텍 템플릿</a></li>
+<li class="toctree-l2"><a class="reference internal" href="latex_template.html#id3">9.2. 레이텍 스타일</a></li>
+<li class="toctree-l2"><a class="reference internal" href="latex_template.html#latexmodule">9.3. 스핑크스의 레이텍 모듈</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="latex_template.html#writer-latex-py">9.3.1. writer_latex.py</a></li>
+<li class="toctree-l3"><a class="reference internal" href="latex_template.html#builder-latex-py">9.3.2. builder_latex.py</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="nb2pdf.html">10. 주피터 노트북을 PDF로 만들기</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="nb2pdf.html#한글">10.1. 한글</a></li>
+<li class="toctree-l2"><a class="reference internal" href="nb2pdf.html#변환-프로그램과-템플릿">10.2. 변환 프로그램과 템플릿</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="nb2pdf.html#문서의-제목과-저자-정보">10.2.1. 문서의 제목과 저자 정보</a></li>
+<li class="toctree-l3"><a class="reference internal" href="nb2pdf.html#그림">10.2.2. 그림</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="bibliography.html">11. 참고 문헌</a></li>
+</ul>
+</div>
+</div>
+
+
+           </div>
+           <div class="articleComments">
+            
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="introduction.html" class="btn btn-neutral float-right" title="1. 소개" accesskey="n" rel="next">다음 <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+
+    </p>
+  </div> 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="_static/translations.js"></script>
+      <script type="text/javascript" src="_static/MathJaxPath.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
