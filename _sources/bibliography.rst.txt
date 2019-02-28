@@ -1,8 +1,0 @@
-.. only:: html
-
-  **********
-  참고 문헌
-  **********
-
-.. bibliography:: references.bib
-   :all:
